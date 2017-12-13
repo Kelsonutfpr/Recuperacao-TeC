@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+
+            <f:facet name="first">
+                <title>Buscar Categoria</title>
+            </f:facet>
+
+            <style type="text/css">  
+                .ui-widget {  
+                    font-size: 14px !important;  
+                }  
+            </style>
+
+        </h:head>
+
+        <h:body>
+            <h1>Buscar Categoria</h1>
+            <h:form>
+                <h:inputText value="#{jsfSelectCategoria.descricao}"/>
+                <h:commandButton value="Buscar"/><p></p>
+                <p:dataTable value="#{jsfSelectCategoria.select}" var="cat">
+                    <p:column>
+                        <f:facet name="header">ID</f:facet>
+                        <center><h:outputText value="#{cat.idcategoria}" /></center>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Descrição</f:facet>
+                        <center><h:outputText value="#{cat.descricao}" /></center>
+                    </p:column>                  
+                </p:dataTable>
+            </h:form>
+        </h:body>
+    </f:view>
+</html>

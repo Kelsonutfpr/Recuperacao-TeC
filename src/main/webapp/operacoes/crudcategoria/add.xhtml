@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <title>Adicionar pessoa </title>
+            </f:facet>
+            <style type="text/css">  
+                .ui-widget {  
+                    font-size: 14px !important;  
+                }  
+            </style>
+        </h:head>
+
+        <h:body>
+            <h1>Adicionar</h1>
+            <h:form>
+                <p:growl id="msg" />
+                <p:fieldset legend="Adicionar nova categoria">
+                    <h:panelGrid id="panel" columns="2">
+                        <h:outputLabel value="Descrição:"></h:outputLabel>
+                        <h:inputText value="#{jsfCategoria.descricao}" required="true"></h:inputText>
+                        <p:commandButton value="Salvar" icon="ui-icon-disk" action="#{jsfCategoria.persist()}" update="panel, msg" />
+                    </h:panelGrid>
+                </p:fieldset>
+            </h:form>   
+        </h:body>
+    </f:view>
+</html>

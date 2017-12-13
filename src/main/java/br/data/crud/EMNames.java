@@ -9,8 +9,6 @@ package br.data.crud;
  *
  * @author Kelson
  */
-public class CrudUsuario {
-    
+public class EMNames {
+    public static final String EMN1 = "PU";
 }
-
-

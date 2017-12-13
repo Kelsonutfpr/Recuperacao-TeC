@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:body>
+        <h:form>
+            <p>
+                <h1><h:outputText value="Trabalho de recuperação da disciplina de Tópicos em Computação - AN36E"/></h1>
+                <h4><h:outputText value="Obs: 1º cadastre uma categoria..."/></h4>
+            </p>
+            <h4><h:outputText value="CRUD Categoria" /></h4> 
+            <p:toolbarGroup align="center" >
+                <p:button value="Cadastrar" outcome="/operacoes/crudcategoria/add.xhtml"/>
+                <p:button value="Buscar" outcome="/operacoes/crudcategoria/listselect.xhtml"/>
+                <p:button value="Listar" outcome="/operacoes/crudcategoria/listall.xhtml"/>
+                <p:button value="Alterar" outcome="/operacoes/crudcategoria/merge.xhtml"/>
+            </p:toolbarGroup>   
+            <p></p>
+            <h4><h:outputText value="CRUD Pessoa" /></h4>
+            <p:toolbarGroup align="center" >
+                <p:button value="Cadastrar" outcome="/operacoes/crudpessoa/add.xhtml" />
+                <p:button value="Buscar" outcome="/operacoes/crudpessoa/listselect.xhtml" />
+                <p:button value="Listar" outcome="/operacoes/crudpessoa/listall.xhtml" />
+                <p:button value="Alterar" outcome="/operacoes/crudpessoa/merge.xhtml" />
+            </p:toolbarGroup>
+        </h:form>
+    </h:body>
+</html>

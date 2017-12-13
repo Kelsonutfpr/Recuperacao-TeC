@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+
+            <f:facet name="first">
+                <title>Editar pessoa </title>
+            </f:facet>
+
+            <style type="text/css">  
+                .ui-widget {  
+                    font-size: 14px !important;  
+                }  
+            </style>
+
+        </h:head>
+        <h:body>
+            <h1>Editar</h1>
+            <h:form>
+                <p:fieldset legend="Editar registro de pessoa">
+                    <h:panelGrid id="panel" columns="2">
+                        <h:outputLabel value="ID:" />
+                        <h:inputText value="#{jsfPessoa.idpessoa}" />
+
+                        <h:outputLabel value="Nome:" />
+                        <h:inputText value="#{jsfPessoa.nome}" required="true" />
+
+                        <h:outputLabel value="Sexo:" />
+                        <p:selectOneRadio value="#{jsfPessoa.sexo}">
+                            <f:selectItem itemLabel="Feminino" itemValue="F" />
+                            <f:selectItem itemLabel="Masculino" itemValue="M" />
+                        </p:selectOneRadio>
+
+                        <h:outputLabel value="Categoria:" />
+                        <p:selectOneMenu value="#{jsfPessoa.fkcategoria}" style="width:125px">
+                            <f:selectItem itemLabel="Selecione..." itemValue="" />
+                            <f:selectItems value="#{jsfCategoria.all}" var="cat" itemLabel="#{cat.descricao}" itemValue="#{cat.idcategoria}"/>
+                        </p:selectOneMenu>
+
+                        <h:outputLabel value="Data de Nascimento:" />
+                        <h:inputText value="#{jsfPessoa.dataNasc}" >
+                            <f:convertDateTime type="date" pattern="mm-dd-yyyy"/>
+                        </h:inputText>
+
+                        <p:commandButton value="Atualizar" action="#{jsfPessoa.merge()}" onclick="return confirm('Categoria atualizada com sucesso!');"/>
+                    </h:panelGrid>
+                </p:fieldset>
+                <h:outputText value="Obs: Data de Nascimento pattern: dd-mm-yyyy" />
+            </h:form>    
+        </h:body>
+    </f:view>
+</html>
