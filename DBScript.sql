@@ -4,7 +4,7 @@ CREATE TABLE public.categoria
 (
 	idcategoria SERIAL NOT NULL,
 	descricao character varying(255),
-    CONSTRAINT categoria_pkey PRIMARY KEY (idcategoria)
+        CONSTRAINT categoria_pkey PRIMARY KEY (idcategoria)
 );
 
 
